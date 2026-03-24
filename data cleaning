@@ -1,0 +1,11 @@
+# Step 2: Data Cleaning (Unit 2)
+# Numeric columns lo unna empty values ni median tho fill chestunnam
+# Ide step manaki WEKA lo error raakunda help chestundi
+final_weka_data = merged_data.fillna(merged_data.median(numeric_only=True))
+
+# Inka emaina string columns lo missing values unte 'Unknown' tho fill cheyandi
+final_weka_data = final_weka_data.fillna('Unknown')
+
+# File save cheyadam
+final_weka_data.to_csv('final_weka_data.csv', index=False)
+print("Cleaned 'final_weka_data.csv' is ready for WEKA!")
